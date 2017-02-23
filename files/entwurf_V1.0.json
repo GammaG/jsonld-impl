@@ -1,0 +1,750 @@
+{
+	"$schema": "http://json-schema.org/draft-03/schema#",
+	"title": "DCAT-AP Schema",
+	"description": "JSON Schema Representation of an DCAT-AP prototype",
+	"type": "object",
+	"properties": {
+		"agent": {
+			"headings": "mandatory",
+			"type": "--ToComplete--",
+			"URI": "foaf:Agent",
+			"reference": "http://xmlns.com/foaf/spec/#term_Agent , http://www.w3.org/TR/vocab-org/",
+			"cardinality":"ToComplete",
+			"properties": {
+				"name": {
+					"headings": "mandatory",
+					"type": "string",
+					"URI": "foaf:name",
+					"reference": "rdfs:Literal",
+					"cardinality": "1..n"
+				},
+				"type": {
+					"headings": "recommended",
+					"type": "0",
+					"URI": "dct:type",
+					"reference": "skos:Concept",
+					"cardinality": "0..1"
+				}
+			}
+		},
+
+		"catalog": {
+			"headings": "mandatory",
+			"type": "--ToComplete--",
+			"URI": "dcat:Catalog",
+			"reference": "http://www.w3.org/TR/2013/WD-vocab-dcat-20130312/#class-catalog",
+			"cardinality": "--ToComplete--",
+			"properties": {
+				"datatset": {
+					"headings": "mandatory",
+					"type": "ToComplete",
+					"URI": "dcat:dataset",
+					"reference": "dcat:Dataset",
+					"cardinality": "1..n"
+				},
+				"description":{
+					"headings": "mandatory",
+					"type": "ToComplete",
+					"URI": "dct:description",
+					"reference": "rdfs:Literal",
+					"cardinality": "1..n"
+				},
+				"publisher": {
+					"headings": "mandatory",
+					"type": "ToComplete",
+					"URI": "dct:publisher",
+					"reference": "foaf:Agent",
+					"cardinality": "1..n"					
+				},
+				"title": {
+					"headings": "mandatory",
+					"type": "string",
+					"URI": "dct:titleCatalogue",
+					"reference": "rdfs:Literal",
+					"cardinality": "1..1"
+				},
+				"homepage": {
+					"headings": "recommended",
+					"type": "string",
+					"URI": "foaf:homepage",
+					"reference": "foaf:Document",
+					"cardinality": "0..1"
+				},
+				"language": {
+					"headings": "recommended",
+					"type": "ToComplete",
+					"URI": "dct:language",
+					"reference": "dctLinguisticSystem:",
+					"cardinality": "0..n"
+				},
+				"licence": {
+					"headings": "recommended",
+					"type": "ToComplete",
+					"URI": "dct:licence",
+					"reference": "dct:LicenceDocument",
+					"cardinality": "0..1"
+					},
+				"realease date": {
+					"headings": "recommended",
+					"type": "ToComplete",
+					"URI": "dct:issued",
+					"reference": "rdfs:Literal",
+					"cardinality": "0..1"
+				},
+				"themes": {
+					"headings": "recommended",
+					"type": "ToComplete",
+					"URI": "dcat:themeTaxonomy",
+					"reference": "skos:ConceptScheme",
+					"cardinality": "0..n"
+				},
+				"Update": {
+					"headings": "recommended",
+					"type": "ToComplete",
+					"URI": "dct:modified",
+					"reference": "rdfs:Literal",
+					"cardinality": "0..1"
+				},
+				"has part": {
+					"headings": "optional",
+					"type": "ToComplete",
+					"URI": "dct:hasPart",
+					"reference": "dcat:Catalog",
+					"cardinality": "0..n"
+					},
+				"is part of": {
+					"headings": "optional",
+					"type": "ToComplete",
+					"URI": "dct:isPartOf",
+					"reference": "dcat:Catalog",
+					"cardinality": "0..1"
+					},
+				"record": {
+					"headings": "optional",
+					"type": "ToComplete",
+					"URI": "dcat:record",
+					"reference": "dcat:CatalogRecord",
+					"cardinality": "0..n"
+					},
+				"rights": {
+					"headings": "optional",
+					"type": "ToComplete",
+					"URI": "dct:rights",
+					"reference": "dct:RightsStatment",
+					"cardinality": "0..1"
+				},
+				"Spatial/geographic": {
+					"headings": "optional",
+					"type": "ToComplete",
+					"URI": "dct:spatial",
+					"reference": "dct:Location",
+					"cardinality": "0..n"
+				}
+			}
+		},
+
+		"Dataset": {
+			"headings": "mandatory",
+			"type": "--ToComplete--",
+			"URI": "dcat:Dataset",
+			"reference": "http://www.w3.org/TR/2013/WD-vocab-dcat-20130312/#class-dataset",
+			"cardinality": "--ToComplete--",
+			"properties": {
+				"description": {
+					"headings": "mandatory",
+					"type": "ToComplete",
+					"URI": "dct:description",
+					"reference": "rdfs:Literal",
+					"cardinality": "1..n"
+				},
+				"title": {
+					"headings": "mandatory",
+					"type": "ToComplete",
+					"URI": "dct:title",
+					"reference": "rdfs:Literal",
+					"cardinality": "1..n"
+				},
+				"contact point": {
+					"headings": "recommended",
+					"type": "ToComplete",
+					"URI": "dcat:contactPoint",
+					"reference": "vcard:Distribution",
+					"cardinality": "0..n"
+				},
+				"dataset distribution": {
+					"headings": "recommended",
+					"type": "ToComplete",
+					"URI": "dcat:distribution",
+					"reference": "dcat:Distribution",
+					"cardinality": "0..n"
+				},
+				"keyword/tag": {
+					"headings": "recommended",
+					"type": "ToComplete",
+					"URI": "dcat:keyword",
+					"reference": "rdfs:Literal",
+					"cardinality": "0..n"
+				},
+				"publisher": {
+					"headings": "recommended",
+					"type": "ToComplete",
+					"URI": "dct:publisher",
+					"reference": "foaf:Agent",
+					"cardinality": "0..1"
+				},
+				"theme/category": {
+					"headings": "recommended",
+					"type": "ToComplete",
+					"URI": "dcat:theme",
+					"reference": "skos:Concept",
+					"cardinality": "0..n"
+				},
+				"acces rights": {
+					"headings": "optional",
+					"type": "ToComplete",
+					"URI": "dct:accessRights",
+					"reference": "dct:RightsStatement",
+					"cardinality": "0..1"
+				},
+				"conforms to": {
+					"headings": "optional",
+					"type": "ToComplete",
+					"URI": "dct:conformsTo",
+					"reference": "dct:Standard",
+					"cardinality": "0..n"
+				},
+				"documentation": {
+					"headings": "optional",
+					"type": "ToComplete",
+					"URI": "foaf:page",
+					"reference": "foaf:Document",
+					"cardinality": "0..n"
+				},
+				"frequency": {
+					"headings": "optional",
+					"type": "ToComplete",
+					"URI": "dct:accuralPeriodicity",
+					"reference": "dct:Frequency",
+					"cardinality": "0..1"
+				},
+				"has version": {
+					"headings": "optional",
+					"type": "ToComplete",
+					"URI": "dct:hasVersion",
+					"reference": "dct:Dataset",
+					"cardinality": "0..n"
+				},
+				"identifier": {
+					"headings": "optional",
+					"type": "ToComplete",
+					"URI": "dct:identifier",
+					"reference": "rdfs:Literal",
+					"cardinality": "0..n"
+				},
+				"is version of": {
+					"headings": "optional",
+					"type": "ToComplete",
+					"URI": "dct:isVersionOf",
+					"reference": "dcat:Dataset",
+					"cardinality": "0..n"
+				},
+				"landing page": {
+					"headings": "optional",
+					"type": "ToComplete",
+					"URI": "dcat:landingPage",
+					"reference": "foaf:Document",
+					"cardinality": "0..n"
+				},
+				"language": {
+					"headings": "optional",
+					"type": "ToComplete",
+					"URI": "dct:language",
+					"reference": "dct:dctLinguisticSystem",
+					"cardinality": "0..n"
+				},
+				"other identifier": {
+					"headings": "optional",
+					"type": "ToComplete",
+					"URI": "adms:identifier",
+					"reference": "adms:Identifier",
+					"cardinality": "0..n"
+				},
+				"provenance": {
+					"headings": "optional",
+					"type": "ToComplete",
+					"URI": "dct:provenance",
+					"reference": "dct:ProvenanceStatement",
+					"cardinality": "0..n"
+				},
+				"related resource": {
+					"headings": "optional",
+					"type": "ToComplete",
+					"URI": "dct:relation",
+					"reference": "rdfs:Resource",
+					"cardinality": "0..n"
+				},
+				"release date": {
+					"headings": "optional",
+					"type": "ToComplete",
+					"URI": "dct:issued",
+					"reference": "rdfs:Literal",
+					"cardinality": "0..1"
+				},
+				"sample": {
+					"headings": "optional",
+					"type": "ToComplete",
+					"URI": "adms:sample",
+					"reference": "dcat:Distribution",
+					"cardinality": "0..n"
+				},
+				"source": {
+					"headings": "optional",
+					"type": "ToComplete",
+					"URI": "dct:source",
+					"reference": "dcat:Dataset",
+					"cardinality": "0..n"
+				},
+				"spatial/digital coverage": {
+					"headings": "optional",
+					"type": "ToComplete",
+					"URI": "dct:spatial",
+					"reference": "dct:Location",
+					"cardinality": "0..n"
+				},
+				"temporal coverage": {
+					"headings": "optional",
+					"type": "ToComplete",
+					"URI": "dct:temporal",
+					"reference": "dct:PeriodOfTime",
+					"cardinality": "0..n"
+				},
+				"type": {
+					"headings": "optional",
+					"type": "ToComplete",
+					"URI": "dct:type",
+					"reference": "skos:Concept",
+					"cardinality": "0..1"
+				},
+				"update": {
+					"headings": "optional",
+					"type": "ToComplete",
+					"URI": "dct:modified",
+					"reference": "rdfs:Literal",
+					"cardinality": "0..1"
+				},
+				"version": {
+					"headings": "optional",
+					"type": "ToComplete",
+					"URI": "owl:versionInfo",
+					"reference": "rdfs:Literal",
+					"cardinality": "0..1"
+				},
+				"version notes": {
+					"headings": "optional",
+					"type": "ToComplete",
+					"URI": "adms:versionNotes",
+					"reference": "rdfs:Literal",
+					"cardinality": "0..n"
+				}
+			}
+		},
+
+		"Literal": {
+			"headings": "mandatory",
+			"type": "--ToComplete--",
+			"URI": "rdfs:Literal",
+			"reference": "http://www.w3.org/TR/rdf-concepts/#section-Literals",
+			"cardinality": "--ToComplete--"
+		},
+
+		"Resource": {
+			"headings": "mandatory",
+			"type": "--ToComplete--",
+			"URI": "rdfs:Resource",
+			"reference": "http://www.w3.org/TR/rdf-schema/#ch_resource",
+			"cardinality": "--ToComplete--"
+		},
+
+		"Category scheme": {
+			"headings": "recommended",
+			"type": "--ToComplete--",
+			"URI": "skos:Concept",
+			"reference": "http://www.w3.org/TR/2013/WD-vocab-dcat-20130312/#class-category-and-category-scheme",
+			"cardinality": "--ToComplete--",
+			"properties": {
+				"title": {
+					"headings": "mandatory",
+					"type": "ToComplete",
+					"URI": "dct:title",
+					"reference": "rdfs:Literal",
+					"cardinality": "1..n"
+				}
+			}
+		},
+
+		"Distribution": {
+			"headings": "recommended",
+			"type": "--ToComplete--",
+			"URI": "dcat:Distribution",
+			"reference": "http://www.w3.org/TR/2013/WD-vocab-dcat-20130312/#class-distribution",
+			"cardinality": "--ToComplete--",
+			"properties": {
+				"access URL": {
+					"headings": "mandatory",
+					"type": "ToComplete",
+					"URI": "dcat:accessURL",
+					"reference": "rdfs:Resource",
+					"cardinality": "1..n"
+				},
+				"description": {
+					"headings": "recommended",
+					"type": "ToComplete",
+					"URI": "dct:description",
+					"reference": "rdfs:Literal",
+					"cardinality": "0..n"
+				},
+				"format": {
+					"headings": "recommended",
+					"type": "ToComplete",
+					"URI": "dct:format",
+					"reference": "rdfs:MediaTypeOrExtent",
+					"cardinality": "0..1"
+				},
+				"licence": {
+					"headings": "recommended",
+					"type": "ToComplete",
+					"URI": "dct:licence",
+					"reference": "dct:LicenceDocument",
+					"cardinality": "0..1"
+				},
+				"byte size": {
+					"headings": "optional",
+					"type": "ToComplete",
+					"URI": "dcat:byteSize",
+					"reference": "rdfs:Literal",
+					"cardinality": "0..1"
+				},
+				"checksum": {
+					"headings": "optional",
+					"type": "ToComplete",
+					"URI": "spdx:checksum",
+					"reference": "spdx:Checksum",
+					"cardinality": "0..1"
+				},
+				"documentation": {
+					"headings": "optional",
+					"type": "ToComplete",
+					"URI": "foaf:page",
+					"reference": "foaf:Document",
+					"cardinality": "0..n"
+				},
+				"Download URL": {
+					"headings": "optional",
+					"type": "ToComplete",
+					"URI": "dcat:downloadURL",
+					"reference": "rdfs:Resource",
+					"cardinality": "0..n"
+				},
+				"language": {
+					"headings": "optional",
+					"type": "ToComplete",
+					"URI": "dct:language",
+					"reference": "dct:LinguisticSystem",
+					"cardinality": "0..n"
+				},
+				"linked schemas": {
+					"headings": "optional",
+					"type": "ToComplete",
+					"URI": "dct:conformsTo",
+					"reference": "dct:Standard",
+					"cardinality": "0..n"
+				},
+				"media type": {
+					"headings": "optional",
+					"type": "ToComplete",
+					"URI": "dcat:mediaType",
+					"reference": "dct:MediaTypeOrExtent",
+					"cardinality": "0..1"
+				},
+				"release date": {
+					"headings": "optional",
+					"type": "ToComplete",
+					"URI": "dct:issued",
+					"reference": "rdfs:Literal",
+					"cardinality": "0..1"
+				},
+				"rights": {
+					"headings": "optional",
+					"type": "ToComplete",
+					"URI": "dct:rights",
+					"reference": "dct:RightsStatement",
+					"cardinality": "0..1"
+				},
+				"status": {
+					"headings": "optional",
+					"type": "ToComplete",
+					"URI": "amds:status",
+					"reference": "skos:Concept",
+					"cardinality": "0..1"
+				},
+				"title": {
+					"headings": "optional",
+					"type": "ToComplete",
+					"URI": "dct:title",
+					"reference": "rdfs:Literal",
+					"cardinality": "0..n"
+				},
+				"update/modification date": {
+					"headings": "optional",
+					"type": "ToComplete",
+					"URI": "dct:modified",
+					"reference": "rdfs:Literal",
+					"cardinality": "0..1"
+				}
+			}
+		},
+
+		"Licence Document":{
+			"headings": "recommended",
+			"type": "--ToComplete--",
+			"URI": "dct:LicenceDocument",
+			"reference": "http://dublincore.org/documents/2012/06/14/dcmi-terms/?v=terms#LicenseDocument",
+			"cardinality": "--ToComplete--",
+			"properties": {
+				"licence type": {
+					"headings": "recommended",
+					"type": "ToComplete",
+					"URI": "dct:type",
+					"reference": "skos:Concept",
+					"cardinality": "0..1"
+				}
+			}
+		},
+
+		"Catalogue Record":{
+			"headings": "optional",
+			"type": "--ToComplete--",
+			"URI": "dcat:CatalogRecord",
+			"reference": "http://www.w3.org/TR/2013/WD-vocab-dcat-20130312/#class-catalog-record",
+			"cardinality": "--ToComplete--",
+			"properties": {
+				"primary topic": {
+					"headings": "mandatory",
+					"type": "ToComplete",
+					"URI": "foaf:primaryTopic",
+					"reference": "dcat:Dataset",
+					"cardinality": "1..1"
+				},
+				"update/modification date": {
+					"headings": "mandatory",
+					"type": "ToComplete",
+					"URI": "dct:modified",
+					"reference": "rdfs:Literal",
+					"cardinality": "1..1"
+				},
+				"application profile": {
+					"headings": "recommended",
+					"type": "ToComplete",
+					"URI": "dct:conformsTo",
+					"reference": "rdfs:Resource",
+					"cardinality": "0..1"
+				},
+				"change type": {
+					"headings": "recommended",
+					"type": "ToComplete",
+					"URI": "adms:status",
+					"reference": "skos:Concept",
+					"cardinality": "0..1"
+				},
+				"listing date": {
+					"headings": "recommended",
+					"type": "ToComplete",
+					"URI": "dct:issued",
+					"reference": "rdfs:Literal",
+					"cardinality": "0..1"
+				},
+				"description": {
+					"headings": "optional",
+					"type": "ToComplete",
+					"URI": "dct:description",
+					"reference": "rdfs:Literal",
+					"cardinality": "0..n"
+				},
+				"language": {
+					"headings": "optional",
+					"type": "ToComplete",
+					"URI": "dct:language",
+					"reference": "dct:LinguisticSystem",
+					"cardinality": "0..n"
+				},
+				"source metadata": {
+					"headings": "optional",
+					"type": "ToComplete",
+					"URI": "dct:source",
+					"reference": "dcat:CatalogRecord",
+					"cardinality": "0..1"
+				},
+				"title": {
+					"headings": "optional",
+					"type": "ToComplete",
+					"URI": "dct:title",
+					"reference": "rdfs:Literal",
+					"cardinality": "0..n"
+				}
+			}
+		},
+
+		"Checksum":{
+			"headings": "optional",
+			"type": "--ToComplete--",
+			"URI": "spdx:Checksum",
+			"reference": "http://spdx.org/rdf/terms#Checksum",
+			"cardinality": "--ToComplete--",
+			"properties": {
+				"algorithm": {
+					"headings": "mandatory",
+					"type": "ToComplete",
+					"URI": "spdx:algorithm",
+					"reference": "spdx:checksumAlgorithm_sha1",
+					"cardinality": "1..1"
+				},
+				"checksum value": {
+					"headings": "mandatory",
+					"type": "ToComplete",
+					"URI": "spdx:checksumValue",
+					"reference": "rdfs:Literal",
+					"cardinality": "1..1"
+				}
+			}
+		},
+		"Document":{
+			"headings": "optional",
+			"type": "--ToComplete--",
+			"URI": "foaf:Document",
+			"reference": "http://xmlns.com/foaf/spec/#term_Document ",
+			"cardinality": "--ToComplete--"
+		},
+
+		"Frequency":{
+			"headings": "optional",
+			"type": "--ToComplete--",
+			"URI": "dct:Frequency",
+			"reference": "http://dublincore.org/documents/dcmi-terms/#terms-Frequency",
+			"cardinality": "--ToComplete--"
+		},
+
+		"Identifier":{
+			"headings": "optional",
+			"type": "--ToComplete--",
+			"URI": "adms:Identifier",
+			"reference": "http://www.w3.org/TR/vocab-adms/#identifier",
+			"cardinality": "--ToComplete--",
+			"properties": {
+				"notation": {
+					"headings": "mandatory",
+					"type": "ToComplete",
+					"URI": "skos:notation",
+					"reference": "rdfs:Literal",
+					"cardinality": "0..1"
+				}
+			}
+		},
+
+		"Kind":{
+			"headings": "optional",
+			"type": "--ToComplete--",
+			"URI": "vcard:Kind",
+			"reference": "http://www.w3.org/TR/2014/NOTE-vcard-rdf-20140522/#d4e181",
+			"cardinality": "--ToComplete--"
+		},
+
+		"Linguistic System":{
+			"headings": "optional",
+			"type": "--ToComplete--",
+			"URI": "dct:LinguisticSystem",
+			"reference": "http://dublincore.org/documents/dcmi-terms/#terms-LinguisticSystem",
+			"cardinality": "--ToComplete--"
+		},
+
+		"Location":{
+			"headings": "optional",
+			"type": "--ToComplete--",
+			"URI": "dct:Location",
+			"reference": "http://dublincore.org/documents/dcmi-terms/#terms-Location",
+			"cardinality": "--ToComplete--"
+		},
+
+		"Media type or extent":{
+			"headings": "optional",
+			"type": "--ToComplete--",
+			"URI": "dct:MediaTypeOrExtent",
+			"reference": "http://dublincore.org/documents/dcmi-terms/#terms-MediaTypeOrExtent",
+			"cardinality": "--ToComplete--"
+		},
+
+		"Period of time":{
+			"headings": "optional",
+			"type": "--ToComplete--",
+			"URI": "dct:PeriodOfTime",
+			"reference": "http://dublincore.org/documents/dcmi-terms/#terms-PeriodOfTime",
+			"cardinality": "--ToComplete--",
+			"properties": {
+				"start date/time": {
+					"headings": "mandatory",
+					"type": "ToComplete",
+					"URI": "schema:startDate",
+					"reference": "rdfs:Literal",
+					"cardinality": "0..1"
+				},
+				"end date/time": {
+					"headings": "mandatory",
+					"type": "ToComplete",
+					"URI": "schema:endDate",
+					"reference": "rdfs:Literal",
+					"cardinality": "0..1"
+				}
+			}
+		},
+
+		"Publisher type":{
+			"headings": "optional",
+			"type": "--ToComplete--",
+			"URI": "skos:Concept",
+			"reference": "http://www.w3.org/TR/vocab-adms/#dcterms-type",
+			"cardinality": "--ToComplete--"
+		},
+
+		"Rights statement":{
+			"headings": "optional",
+			"type": "--ToComplete--",
+			"URI": "dct:RightsStatement",
+			"reference": "http://dublincore.org/documents/dcmi-terms/#terms-RightsStatement",
+			"cardinality": "--ToComplete--"
+		},
+
+		"Standard":{
+			"headings": "optional",
+			"type": "--ToComplete--",
+			"URI": "dct:Standard",
+			"reference": "http://dublincore.org/documents/dcmi-terms/#terms-Standard",
+			"cardinality": "--ToComplete--"
+		},
+
+		"Status":{
+			"headings": "optional",
+			"type": "--ToComplete--",
+			"URI": "skos:Concept",
+			"reference": "http://www.w3.org/TR/vocab-adms/#status ",
+			"cardinality": "--ToComplete--"
+		},
+
+		"Provenance Statement":{
+			"headings": "optional",
+			"type": "--ToComplete--",
+			"URI": "dct:ProvenanceStatement",
+			"reference": "http://dublincore.org/documents/dcmi-terms/#terms-ProvenanceStatement",
+			"cardinality": "--ToComplete--"
+		}
+
+	}
+}
