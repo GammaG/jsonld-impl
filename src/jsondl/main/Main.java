@@ -37,6 +37,7 @@ public class Main {
 			// Customise options...
 		// Call whichever JSONLD function you want! (e.g. compact)
 		Object compact = JsonLdProcessor.compact(jsonObject, context, options);
+		compact = JsonLdProcessor.expand(jsonObject, options);
 		// Print out the result (or don't, it's your call!)
 		System.out.println(JsonUtils.toPrettyString(compact));
 		
